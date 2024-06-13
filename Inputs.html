@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<style>
+    .box{
+        width: max-content;
+        height: max-content;
+        border-radius: 8px;
+        border: solid black;
+        margin:5px;
+    }
+    #box1, #box2{
+        color: green;
+        font-size: large;
+        text-wrap: wrap;
+    }
+    #box3{
+        color: orange;
+        font-size: large;
+    }
+</style>
+<body>
+    <form action="">
+        <label for="num1">Enter a Number</label>
+        <input type="number" id="num1" >
+        <button type="button" onclick="ShowMultiples()">Enter</button>
+        <button type="button" onclick="Boxes()">Submit</button>
+    
+        <div id="NewArray"></div>
+        <div id="Multiples"></div>
+    </form>
+    <div class="box " id="box1"></div>
+    <div class="box " id="box2"></div>
+    <div class="box " id="box3"></div>
+    <script>
+         var multiplesArray=[];
+        var even=[];
+        var odd=[];
+        var prime=[];
+                function ShowMultiples()
+                {
+                    var num=document.getElementById("num1").value;
+                    document.getElementById("NewArray").innerHTML="Entered Number ="+num;
+                //num=2;
+                        for(var i=1;i<=10;i++)
+                        {
+                            var multiple=num*i;    //multiple=2*1=2
+                            multiplesArray.push(multiple); //multiplesArray=[2,]
+                            TypeOfNumber(multiple);
+                        
+                            if(multiple>=10) //2>=10 ---false
+                            {
+                                break;
+                            }
+                        }
+                    document.getElementById("Multiples").innerHTML += "<br>Multiples up to 10: " + multiplesArray.join(", ");
+                }
+
+                 function TypeOfNumber(multiple)
+                 {
+                    
+                    if(multiple%2==0) //2%2=0
+                    {
+                        even.push(multiple);
+                    }
+                    else if(multiple%2!=0)
+                    {
+                        odd.push(multiple);
+                    }
+                  
+                   if(isPrime(multiple)){
+                        
+                        prime.push(multiple);
+                    }
+                    
+                 }
+    function isPrime(multiplesArray)
+    {
+        if(multiplesArray<=1)
+        {
+            return false;
+        }
+        for (var i=2;i<Math.sqrt(num);i++)
+        {
+            if(multiplesArray%i==0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+  
+         function Boxes()
+        {
+           
+            document.getElementById("box1").innerHTML+="Even Numbers in an array = "+even.join(",");
+          
+            document.getElementById("box2").innerHTML+="Odd Numbers in an array = "+odd.join(",");
+
+            document.getElementById("box3").innerHTML+="Prime Numbers in an array = "+prime.join(",");
+
+        } 
+   
+    </script>
+</body>
+</html>
