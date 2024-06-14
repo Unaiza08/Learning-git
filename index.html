@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>
+        Calculator
+    </title>
+    <link rel="stylesheet" href="Calculator.css">
+</head>
+
+<script src="Calculator.js">
+  
+    </script>
+    <body>
+    <div class="container">
+        <div class="screen" aria-readonly="true">
+            <input  id="output">
+        </div>
+        <div class="buttons">
+        <button value="AC" onclick="Clear()" class="arith">AC</button>
+        <button value="+/-" class="arith">+/-</button>
+        <button value="%"  class="arith">%</button>
+        <button value="/" onclick="Solve('/')" class="ope">÷</button>
+        <button value="7" onclick="Solve('7')" class="num">7</button>
+        <button value="8" onclick="Solve('8')" class="num">8</button>
+        <button value="9"onclick="Solve('9')"  class="num">9</button>
+        <button value="*" onclick="Solve('*')" class="ope">×</button>
+        <button value="4" onclick="Solve('4')" class="num">4</button>
+        <button value="5" onclick="Solve('5')" class="num">5</button>
+        <button value="6" onclick="Solve('6')" class="num">6</button>
+        <button value="-"onclick="Solve('-')"  class="ope">−</button>
+        <button value="1" onclick="Solve('1')" class="num">1</button>
+        <button value="2" onclick="Solve('2')" class="num">2</button>
+        <button value="3" onclick="Solve('3')" class="num">3</button>
+        <button value="+" onclick="Solve('+')" class="ope">+</button>
+        <button value="0" onclick="Solve('0')" class="num0" >0</button>
+        <button value="." onclick="Solve('.')" class="num">.</button>
+        <button value="=" onclick="compute()" class="ope">=</button>
+       
+        
+        
+    </div>
+
+    </div>
+</body>
+</html>
